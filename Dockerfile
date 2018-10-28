@@ -9,7 +9,7 @@ RUN apt-get -y install software-properties-common
 RUN apt-add-repository -y ppa:ansible/ansible
 RUN apt-get -y update
 RUN apt-get -y install ansible openssh-client rsync
-RUN ansible-galaxy install --force carlosbuenosvinos.ansistrano-deploy carlosbuenosvinos.ansistrano-rollback --roles-path=/usr/share/ansible/roles
+RUN ansible-galaxy install --force ansistrano.deploy ansistrano.rollback --roles-path=/usr/share/ansible/roles
 
 ## Ansistrano user
 RUN adduser --disabled-password --gecos '' ansistrano
